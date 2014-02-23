@@ -1,3 +1,13 @@
+===
+
+This is a Netbeans project wrapper for TarsosDSP. 
+For original project, please visit https://github.com/JorenSix/TarsosDSP
+API Examples are located at /src/be/hogent/tarsos/dsp/example
+
+
+rg,
+Chandra
+===
 h1. TarsosDSP
 
 TarsosDSP is a Java library for audio processing. Its aim is to provide an easy-to-use interface to practical music  processing algorithms implemented, as simply as possible, in pure Java and without any other external dependencies. TarsosDSP features an implementation of a percussion onset detector and a number of pitch detection algorithms: YIN, the Mcleod Pitch method and a "Dynamic Wavelet Algorithm Pitch Tracking" algorithm. Also included is a Goertzel DTMF(Dual tone multi frequency) decoding algorithm, a time stretch algorithm (WSOLA), resampling, filters, simple synthesis, some audio effects, and a pitch shifting algorithm.
@@ -13,103 +23,3 @@ bc. @inproceedings{six2014tarsosdsp,
   year        =  2014
 }
 
-
-h2. Quickly Getting Started with TarsosDSP
-
-Head over to the "TarsosDSP release repository":http://tarsos.0110.be/releases/TarsosDSP/ and download the latest "TarsosDSP library":http://tarsos.0110.be/releases/TarsosDSP/TarsosDSP-latest/TarsosDSP-latest.jar. To get up to speed quickly, check the "TarsosDSP Example applications":http://tarsos.0110.be/releases/TarsosDSP/TarsosDSP-latest/TarsosDSP-latest-Examples/ for inspiration and consult the "API documentation":http://tarsos.0110.be/releases/TarsosDSP/TarsosDSP-latest/TarsosDSP-latest-Documentation/.
-
-h2. TarsosDSP Example Applications
-
-TarsosDSP contains some ready made example applications. Most have a Java Swing user interface. They show which functionality is present in the library and how to use it.
-
-* "SoundDetector":http://tarsos.0110.be/artikels/lees/TarsosDSP%253A_a_small_JAVA_audio_processing_library show how you loudness calculations can be done. When input sound is over a defined limit an event is fired.
-* "PitchDetector":http://tarsos.0110.be/artikels/lees/TarsosDSP%253A_a_small_JAVA_audio_processing_library this demo application shows real-time pitch detection. When pitch is detected the hertz value is printed together with a probability.
-* "PercussionDetector":http://tarsos.0110.be/artikels/lees/TarsosDSP%253A_a_small_JAVA_audio_processing_library show the percussion (onset) dectection. Clapping your hands causes an event. This demo application also shows the influence of the two parameters on the algorithm.
-* "UtterAsterisk":http://tarsos.0110.be/artikels/lees/TarsosDSP_sample_application%253A_Utter_Asterisk a game with the goal to sing as close to a melody a possible. Technically it shows real-time pitch detection with YIN or MPM.
-* "Spectrogram in Java":http://tarsos.0110.be/artikels/lees/Spectrogram_in_Java_with_TarsosDSP shows a spectrogram and detected pitch, either live or from an audio file. It is interesting to see which frequencies are picked as fundamentals.
-* "Goertzel DTMF(Dual tone multi frequency) decoding":http://tarsos.0110.be/artikels/lees/Dual-Tone_Multi-Frequency_%2528DTMF%2529_Decoding_with_the_Goertzel_Algorithm_in_Java an implementation of the Goertzel Algorithm. A fancy user interface shows what goes on under the hood.
-* "Audio Time Stretching - Implementation in Pure Java Using WSOLA":http://tarsos.0110.be/artikels/lees/Audio_Time_Stretching_-_Implementation_in_Pure_Java_Using_WSOLA an implementation of a time stretching algorithm. WSOLA(Waveform Similarity Overlap Add) makes it possible to change the play back speed of audio without changing the pitch. The play back speed can be changed at any moment, even when there is audio playing.
-* "Audio Feature Extraction":http://tarsos.0110.be/releases/TarsosDSP/TarsosDSP-1.3/TarsosDSP-1.3-Examples/FeatureExtractor-1.3.jar a command line application to do simple feature extraction.
-* "Audio Synthesis":http://tarsos.0110.be/releases/TarsosDSP/TarsosDSP-1.3/TarsosDSP-1.3-Examples/Synthesis-1.3.jar a command line application to do simple audio synthesis.
-* "Pitch Shifting":http://tarsos.0110.be/artikels/lees/Pitch_Shifting_-_Implementation_in_Pure_Java_with_Resampling_and_Time_Stretsching an example application that does pitch shifting, either in real-time on a microphone input, or on recorded audio. Also included is a command line application to do pitch shifting. 
-
-
-h2. Developing TarsosDSP
-
-If you want to build from source, or want to improve TarsosDSP follow the instructions below. Contributions to TarsosDSP are more than welcome, if you have a an algorithm to add or find a bug, do not hesitate to send me a message.
-
-TarsosDSP uses "Apache Ant":http://ant.apache.org/ as a build system. The instructions below detail how you can build from source. When everything runs correctly you should be able to run all example applications and have the latest version of the TarsosDSP library for inclusion in your projects. Also the Javadoc documentation for the API should be available.
-
-
-h3. TarsosDSP with Ant
-
-To  you need "Apache Ant":http://ant.apache.org/ and "git":http://git-scm.com/ installed on your system. The following commands fetch the source and build the library and example jars: 
-<pre><code>git clone https://JorenSix@github.com/JorenSix/TarsosDSP.git
-cd TarsosDSP
-cd build
-ant tarsos_dsp_library #Builds the core TarsosDSP library
-ant build_examples #Builds all the TarsosDSP examples
-ant javadoc #Creates the documentation in TarsosDSP/doc
-</code></pre>
- 
-h2. Source Code Organization & Developing
-
-The library is separated into three source folders: 1) the main core functionality in @src@, TarsosDSP example applications in @examples@ and unit tests in @test@.
-
-* @src@ contains the source files of the core DSP libraries. 
-* @test@ contains unit tests for some of the DSP functionality.
-* @examples@ contains a couple of example applications with a Java Swing user interface.
-* @build@ contains ANT build files. Either to build Java documentation or runnable JAR-files for the example applications.  
-
-To make development with Eclipse easy, make sure both test, src and examples are marked as source folders.
-
-
-h2. Credits
- 
-"TarsosDSP":http://tarsos.0110.be/tag/TarsosDSP was developed at "University College Ghent, School of Arts":http://schoolofartsgent.be between 2009 and 2013, from late 2013 the project is supported by "University Ghent, IPEM":http://www.ipem.ugent.be. 
-
-The TarsosDSP borrows algorithms from various other libraries or research paper. Below a complete list of credits can be found.
-
-* The onset detector implementation is based on a "VAMP plugin example":http://vamp-plugins.org/code-doc/PercussionOnsetDetector_8cpp-source.html by __Chris Cannam__ at Queen Mary University, London. The method is described in "Drum Source Separation using Percussive Feature Detection and Spectral Modulation":http://eprints.nuim.ie/699/1/ELE-Bob9.pdf by Dan Barry, Derry Fitzgerald, Eugene Coyle and Bob Lawlor, ISSC 2005.
-* For the implementation of the YIN pitch tracking algorithm. Both the  "the YIN paper":http://recherche.ircam.fr/equipes/pcm/cheveign/ps/2002_JASA_YIN_proof.pdf and the GPL'd "aubio implementation":http://aubio.org were used as a reference. __Matthias Mauch__ (of Queen Mary University, London) kindly provided the FastYin implementation which uses an FFT to calculate the difference function, it makes the algorithm up to 3 times faster.
-* The Average Magnitude Difference (AMDF) pitch estimation algorithm is implemented by __Eder Souza__ and adapted for TarsosDSP by myself.
-* For the MPM pitch tracking algorithm, the paper titled "A Smarter Way To Find Pitch":http://miracle.otago.ac.nz/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf by __Philip McLeod__ and __Geoff Wyvill__ was used. 
-* The Dynamic Wavlet pitch estimation algorithm is described in "Real-Time Time-Domain Pitch Tracking Using Wavelets":http://online.physics.uiuc.edu/courses/phys193/NSF_REU_Reports/2005_reu/Real-Time_Time-Domain_Pitch_Tracking_Using_Wavelets.pdf by Eric Larson and Ross Maddox. The implementation within TarsosDSP is based on the implementation in the "Dynamic Wavelet Algorithm Pitch Tracking library":http://www.schmittmachine.com/dywapitchtrack.html by __Antoine Schmitt__, which is released under the MIT open source license, a license compatible with the GPL.
-* The audio time stretching algorithm is described in "An Overlap-Add Technique Based on Waveform Similarity  (WSOLA) For Hight Quality Time-Scale Modifications of speech":http://mir.cs.nthu.edu.tw/users/litbee/RelatedPaper/[WSOLA]An%20overlap-add%20technique%20based%20on%20waveform%20similarity%20(WSOLA)%20for%20high-quality%20time-scale%20modifications%20of%20speech.pdf by Werner Verhelst and Marc Roelands. As a reference implementation the WSOLA implementation by __Olli Parviainen__ in the LGPL "SoundTouch - an open-source audio processing library":http://www.surina.net/soundtouch/ was used.
-* The FFT implementation used within TarsosDSP is by __Piotr Wendykier__ and is included in his GPL'd "JTransforms library":https://sites.google.com/site/piotrwendykier/software/jtransforms. JTransforms is the first, open source, multithreaded FFT library written in pure Java. 
-* The sample rate conversion feature is implemented by __Laszlo systems__ in the GPL'd "libresample4j":https://github.com/dnault-laszlo/libresample4j library. libresample4j is a Java port of Dominic Mazzoni's libresample 0.1.3, which is in turn based on "Julius Smith's Resample 1.7 library":http://www-ccrma.stanford.edu/~jos/resample/
-* Various FFT window functions are done by Damien Di Fede and Corban Brook for the GPL'd "Minim":http://code.compartmental.net/tools/minim/ project.
-* Beat induction based on onsets and saliences is done using code from "Simon Dixon's BeatRoot system":http://www.eecs.qmul.ac.uk/~simond/beatroot/.The software is licensed under the GPL. The algorithm is documented in the 2001 JNMR paper "__Automatic Extraction of Tempo and Beat From Expressive Performances__":http://www.tandfonline.com/doi/abs/10.1076/jnmr.30.1.39.7119#.UbcsROcW0r0 and in the 2007 JNMR article "__Evaluation of the Audio Beat Tracking System BeatRoot__":http://www.tandfonline.com/doi/full/10.1080/09298210701653310#.UbcsgecW0r0
-* A complex domain onset detection function is implemented using Aubio as an inspiration. Aubio, by __Paul Brossiers__ contains very clean object oriented c-code, the cleanest c-code I have ever seen. The algorithm is described in "__Complex Domain Onset Detection for Musical Signals__":http://www-student.elec.qmul.ac.uk/people/juan/Documents/Duxbury-DAFx-2003.pdf by Christopher Duxbury, Mike E. Davies, and Mark B. Sandler, in Proceedings of the Digital Audio Effects Conference, DAFx-03, pages 90-93, London, UK, 2003
-* An implementation of the Constant-Q transform by Karl Helgason for the GPL'd <a href="http://rasmusdsp.sourceforge.ne">RasmusDSP</a> project has been adapted for use in TarsosDSP. More information about the Constant-Q transform can be found in the following papers "__Calculation of a Constant Q Spectral Transform__":http://www.wellesley.edu/Physics/brown/pubs/cq1stPaper.pdf by Judith C. Brown, "__An Efficient Algorithm for the Calculation of a Constant Q Transform__":http://www.wellesley.edu/Physics/brown/pubs/effalgV92P2698-P2701.pdf, by Judith C. Brown and Miller S. Puckette, and "__The Constant Q Transform__":http://wwwmath1.uni-muenster.de/logik/org/staff/blankertz/constQ/constQ.pdf by Benjamin Blankertz
-
-h2. Changelog
-
-<dt>Version 1.0</dt><dd>2012-04-24</dd> First release which includes several pitch trackers and a time stretching algorithm, amongst other things. Downloads and javadoc API can be found at the "TarsosDSP release directory":http://tarsos.0110.be/releases/TarsosDSP/
-
-<dt>Version 1.1</dt><dd>2012-06-4</dd> 
-Changed how the audio dispatcher stops. Added StopAudioProcessor.
-Added FastYin implementation by Matthias Mauch
-Added AMDF pitch estimator by Eder Souza
-
-<dt>Version 1.2</dt><dd>2012-08-21</dd> 
-Modified the interface of PitchDetector to return a more elaborate result structure with pitch, probability and a boolean "is pitched".
-Added an implementation of an envelope follower or envelope detector.
-
-<dt>Version 1.3</dt><dd>2012-09-19</dd> 
-TarsosDSP can do audio synthesis now. The first simple unit generators are included in the library.
-It has a new audio feature extraction feature, implemented in the FeatureExtractor example. 
-Added ASCII-art to the source code (this is the main TarsosDSP 1.3 feature). 
-
-<dt>Version 1.4</dt><dd>2012-10-31</dd>
-Included a resample feature, implemented by libresample4j. Together with the WSOLA implementation, it can be used for pitch shifting (similar to Phase Vocoding). A pitch shifting example (both with a CLI and a UI) is added in the 1.4 version of the TarsosDSP library as well. 
-
-
-<dt>Version 1.5</dt><dd>2013-04-30</dd>
-Converted TarsosDSP to maven. This is known as the Malaryta-release. The "Malaryta" release is provided to you by "RikkiMongoose":http://github.com/rikkimongoose (idea, documents, git things) and "Ultar":http://github.com/ultar (converting to maven, refactoring). Malaryta is the capital of Malaryta Raion, Brest Region in the Republic of Belarus. Both of developers spent their childhood in Brest, and think that title Malaryta is as strange as Ubuntu or Whistler. The 1.5 release also includes various FFT window functions from the cool "Minim project":http://code.compartmental.net/tools/minim/ by Damien Di Fede. 
-
-<dt>Version 1.6</dt><dd>2013-06-12</dd>
-This release features practical onset and beat detection algorithms. A complex domain onset detection and a spectral flux onset detection algorithm are added. This release also includes a way to guess a beat from onsets. Parts of the "BeatRoot system":http://www.eecs.qmul.ac.uk/~simond/beatroot/, by Simon Dixon, are included to this end. Also included in this release is an implementation of the Constant-Q transform.
-
-<dt>Version 1.7</dt><dd>2013-10-08</dd>
-This release adds the ability to extract the MFCC from an audio signal. Also an example of the Constant-Q transform is added, together with a reusable visualization class library. The build system is reverted back to pure ANT.
