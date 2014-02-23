@@ -1,13 +1,13 @@
-===
-
-This is a Netbeans project wrapper for TarsosDSP. 
-For original project, please visit https://github.com/JorenSix/TarsosDSP
-API Examples are located at /src/be/hogent/tarsos/dsp/example
-
-
+<hr/>
+<i>
+This is a Netbeans project wrapper for TarsosDSP. For original project, please visit https://github.com/JorenSix/TarsosDSP
+API Examples are located at <code> /src/be/hogent/tarsos/dsp/example </code>
+</i>
 rg,
-Chandra
-===
+<b>Chandra</b>
+
+<hr/>
+
 h1. TarsosDSP
 
 TarsosDSP is a Java library for audio processing. Its aim is to provide an easy-to-use interface to practical music  processing algorithms implemented, as simply as possible, in pure Java and without any other external dependencies. TarsosDSP features an implementation of a percussion onset detector and a number of pitch detection algorithms: YIN, the Mcleod Pitch method and a "Dynamic Wavelet Algorithm Pitch Tracking" algorithm. Also included is a Goertzel DTMF(Dual tone multi frequency) decoding algorithm, a time stretch algorithm (WSOLA), resampling, filters, simple synthesis, some audio effects, and a pitch shifting algorithm.
